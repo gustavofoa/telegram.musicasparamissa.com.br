@@ -1,6 +1,6 @@
-# SB UI Kit Pro
+# LP Telegram músicas para missa
 
-Start Bootstrap's premium UI development kit for Bootstrap 4 projects
+Página de landing page para músicas para missa
 
 ```
 npm install
