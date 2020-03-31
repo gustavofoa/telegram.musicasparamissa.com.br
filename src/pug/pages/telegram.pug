@@ -1,0 +1,179 @@
+extends ../layouts/default.pug
+
+block config
+
+    - var pageTitle = 'Telegram - Músicas para Missa'
+
+append css
+    link(rel='stylesheet', href='https://unpkg.com/aos@next/dist/aos.css')
+
+block content
+
+    //- * * * * * * * * * *
+    //- * * Page Header * *
+    //- * * * * * * * * * *
+
+    include mixins/header.pug
+    +header({
+        pageHeaderBg: 'bg-gradient-primary-to-secondary',
+        pageHeaderStyle: 'page-header-dark',
+        svgBorderAngled: false,
+        svgBorderRounded: false,
+        svgBorderWaves: true,
+        svgBorderFill: 'text-light'
+    })
+
+        .page-header-content.mb-n5
+            .container
+                .row.justify-content-center.align-items-center
+                    .col-lg-6(data-aos='fade-right')
+                        h1.page-header-title Participe do nosso canal no telegram!
+                        p.page-header-text.mb-5 Sugestões de músicas, dicas, música litúrgica, workshops, reflexões e muito mais pra quem realmente quer prestar o melhor serviço da música litúrgica na missa.
+                        .row-lg.text-center(data-aos='fade-up', data-aos-delay='500')
+                            a.btn.btn-white.btn-xl.text-primary.rounded-pill(href='https://t.me/canalmusicasparamissa') CLIQUE AQUI PARA ENTRAR
+                    .col-lg-6.z-1(data-aos='fade-left')
+                        .device-wrapper.mx-auto.mb-n15
+                            .device(data-device='iPhoneX', data-orientation='portrait', data-color='black')
+                                .screen
+                                    img(src='assets/img/telegram-mpm.png').img-fluid.z-1
+
+    //- * * * * * * * * * * * * * *
+    //- * * O que você receberá * *
+    //- * * * * * * * * * * * * * *
+
+    include mixins/section.pug
+    +section({
+        sectionBg: 'bg-light',
+        sectionPadding: 'py-10',
+        svgBorderAngled: false,
+        svgBorderRounded: true,
+        svgBorderWaves: false,
+        svgBorderFill: 'text-white'
+    })
+
+        .container
+            .row.justify-content-center
+                .col-lg-8
+                    .text-center
+                        h1.mb-5.display-3 O que você vai receber?
+            .row
+                .col-lg-4.col-md-6.mb-5(data-aos='fade-up')
+                    a.card.text-center.text-decoration-none.h-100.lift(href='#!')
+                        .card-body.py-5
+                            .icon-stack.icon-stack-lg.bg-green-soft.text-green.mb-4
+                                i(data-feather='music')
+                            h5 Sugestões de Músicas
+                            p.card-text.small Nossas sugestões de músicas e melodias para salmos
+                .col-lg-4.col-md-6.mb-5(data-aos='fade-up', data-aos-delay='100')
+                    a.card.text-center.text-decoration-none.h-100.lift(href='#!')
+                        .card-body.py-5
+                            .icon-stack.icon-stack-lg.bg-red-soft.text-red.mb-4
+                                i(data-feather='sun')
+                            h5 Reflexões
+                            p.card-text.small Nossas reflexões sobre as leituras da missa para te ajudar a escolher as músicas
+                .col-lg-4.col-md-6.mb-5(data-aos='fade-up', data-aos-delay='150')
+                    a.card.text-center.text-decoration-none.h-100.lift(href='#!')
+                        .card-body.py-5
+                            .icon-stack.icon-stack-lg.bg-yellow-soft.text-yellow.mb-4
+                                i(data-feather='layers')
+                            h5 Conhecimento
+                            p.card-text.small Ensinamentos sobre quais músicas são apropriadas ou não para as missas
+                .col-lg-4.col-md-6.mb-5.mb-lg-0(data-aos='fade-up')
+                    a.card.text-center.text-decoration-none.h-100.lift(href='#!')
+                        .card-body.py-5
+                            .icon-stack.icon-stack-lg.bg-purple-soft.text-purple.mb-4
+                                i(data-feather='book')
+                            h5 Workshops
+                            p.card-text.small Acesso direto aos conteúdos dos nossos Workshops
+                .col-lg-4.col-md-6.mb-5.mb-md-0(data-aos='fade-up', data-aos-delay='100')
+                    a.card.text-center.text-decoration-none.h-100.lift(href='#!')
+                        .card-body.py-5
+                            .icon-stack.icon-stack-lg.bg-blue-soft.text-blue.mb-4
+                                i(data-feather='mic')
+                            h5 Avisos
+                            p.card-text.small Nossos avisos importantes em primeira mão.
+                .col-lg-4.col-md-6(data-aos='fade-up', data-aos-delay='150')
+                    a.card.text-center.text-decoration-none.h-100.lift(href='#!')
+                        .card-body.py-5
+                            .icon-stack.icon-stack-lg.bg-orange-soft.text-orange.mb-4
+                                i(data-feather='monitor')
+                            h5 Conteúdos especiais
+                            p.card-text.small Estamos sempre procurando criar novos conteúdos e aqui você terá acesso a todos eles!
+
+    //- * * * * * * * * * * * * * * *
+    //- * * Como funciona o canal * *
+    //- * * * * * * * * * * * * * * *
+
+    include mixins/section.pug
+    +section({
+        sectionBg: 'bg-white',
+        sectionPadding: 'py-10',
+        svgBorderAngled: false,
+        svgBorderRounded: false,
+        svgBorderWaves: false,
+        svgBorderFill: ''
+    })
+
+        .container
+            .row.justify-content-center
+                .col-lg-10.mt-5
+
+                    h1.display-3 COMO FUNCIONA O CANAL MÚSICAS PARA MISSA NO TELEGRAM?
+
+                    p Nós ficamos pensando em como ficar mais próximos de você e poder te ajudar ainda mais na hora de preparar as músicas para a missa ... 
+                    p Então, tivemos a ideia de criar um canal no Telegram.
+                    p O Telegram é um pouco parecido com WhatsApp só que muito melhor na nossa opinião.
+                    p E no Telegram nós podemos te enviar áudios e mensagens direto do nosso celular para o seu.
+                    p Ele é gratuito. É só baixar e entrar no Canal do músicas para missa. Não é um grupo, não ficam rolando zilhões de mensagens ao longo do dia.
+                    p É como se fosse um canal de TV que você abre e ouve/assiste o conteúdo. 
+                    p É um lugar onde nós vamos dividir aprendizados, ideias, dicas, te ajudar a refletir sobre a liturgia e as músicas apropriadas para as missas...
+                    p Já começamos a compartilhar tudo isso lá, então se você quiser, já pode entrar no canal e acompanhar.
+
+                    .card.z-1.mb-n10
+                        .card-body.text-center.py-5
+                            h2.mb-3 Participe! É gratuito!
+                            a.btn.btn-primary.btn-lg.rounded-pill(href='https://t.me/canalmusicasparamissa') ENTRAR NO CANAL
+
+    hr
+
+    //- * * * * * * * * * * * * * *
+    //- * * Instale o Telegram! * *
+    //- * * * * * * * * * * * * * *
+
+    include mixins/section.pug
+    +section({
+        sectionBg: 'bg-white',
+        sectionPadding: 'py-10',
+        svgBorderAngled: false,
+        svgBorderRounded: false,
+        svgBorderWaves: true,
+        svgBorderFill: 'text-dark'
+    })
+
+        .container
+            .row.align-items-center
+                .col-lg-6
+                    h4 Se você não tem o telegram instalado
+                    p.lead.mb-5.mb-lg-0 você precisa baixar o Telegram no celular. Basta acessar um desses links, dependendo do modelo do seu aparelho:
+                .col-lg-6.text-lg-right
+                    a.mr-3(href='https://apps.apple.com/br/app/telegram-messenger/id686449807' target="blank")
+                        img(src='assets/img/app-store-badge.svg', style="height: 3rem;")
+                    a(href='https://play.google.com/store/apps/details?id=org.telegram.messenger' target="blank")
+                        img(src='assets/img/google-play-badge.svg', style="height: 3rem;")
+
+block footer
+
+    include mixins/footer.pug
+    +footer({
+        footerBg: 'bg-dark',
+        footerStyle: 'footer-dark'
+    })
+
+append scripts
+    script(src='https://unpkg.com/aos@next/dist/aos.js')
+    script.
+        AOS.init({
+            disable: 'mobile',
+            duration: 600,
+            once: true
+        });

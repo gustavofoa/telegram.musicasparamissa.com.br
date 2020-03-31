@@ -2,9 +2,10 @@ extends ../layouts/default.pug
 
 block config
 
-    - var pageTitle = 'Telegram - Músicas para Missa'
+    - var pageTitle = 'Plataforma Minhas Músicas para Missa'
 
 append css
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.0/lity.min.css')
     link(rel='stylesheet', href='https://unpkg.com/aos@next/dist/aos.css')
 
 block content
@@ -27,19 +28,45 @@ block content
             .container
                 .row.justify-content-center.align-items-center
                     .col-lg-6(data-aos='fade-right')
-                        h1.page-header-title Participe do nosso canal no telegram!
-                        p.page-header-text.mb-5 Sugestões de músicas, dicas, música litúrgica, workshops, reflexões e muito mais pra quem realmente quer prestar o melhor serviço da música litúrgica na missa.
+                        h1.page-header-title Inscrições GRATUITAS por tempo limitado!
+                        p.page-header-text.mb-5 Abrimos inscrições para a plataforma <strong>Minhas Músicas para Missa</strong> com acesso GRATUITO a área de cursos por 60 dias. <strong>APROVEITE</strong>!
                         .row-lg.text-center(data-aos='fade-up', data-aos-delay='500')
-                            a.btn.btn-white.btn-xl.text-primary.rounded-pill(href='https://t.me/canalmusicasparamissa') CLIQUE AQUI PARA ENTRAR
+                            a.btn.btn-white.btn-xl.text-primary.rounded-pill(href='#signup-form') CLIQUE AQUI PARA SE CADASTRAR!
                     .col-lg-6.z-1(data-aos='fade-left')
                         .device-wrapper.mx-auto.mb-n15
                             .device(data-device='iPhoneX', data-orientation='portrait', data-color='black')
                                 .screen
-                                    img(src='assets/img/telegram-mpm.png').img-fluid.z-1
+                                    img(src='assets/img/inscricoes-gratuitas-minhas-mpm.png').img-fluid.z-1
+                    
+                    
 
-    //- * * * * * * * * * * * * * *
-    //- * * O que você receberá * *
-    //- * * * * * * * * * * * * * *
+    //- * * * * * * * * * * * * * * *
+    //- * * Explicação quarentena * *
+    //- * * * * * * * * * * * * * * *
+
+    include mixins/section.pug
+    +section({
+        sectionBg: 'bg-white',
+        sectionPadding: 'py-10',
+        svgBorderAngled: true,
+        svgBorderRounded: false,
+        svgBorderWaves: false,
+        svgBorderFill: 'text-light'
+    })
+
+        .container
+            .row.justify-content-center
+                .col-lg-10.mt-5
+
+                    h1.display-3 Quarentena de estudos!
+
+                    p(style="text-align: justify;") Neste momento difícil que estamos passando em nosso país, sem poder ir à missa presencialmente, resolvemos liberar para você GRATUITAMENTE TODOS OS CURSOS que fazem parte da plataforma MINHAS MÚSICAS PARA MISSA por 60 dias!
+                    p(style="text-align: justify;") Isso mesmo, estamos liberando DE GRAÇA, os cursos que estão dentro da plataforma para você aproveitar este tempo quaresmal e quarentena em casa estudando sobre música e liturgia.
+
+
+    //- * * * * * * * * * * * * * * *
+    //- * * Quais são os cursos * * *
+    //- * * * * * * * * * * * * * * *
 
     include mixins/section.pug
     +section({
@@ -53,113 +80,191 @@ block content
 
         .container
             .row.justify-content-center
-                .col-lg-8
+                .col-lg-9
                     .text-center
-                        h1.mb-5.display-3 O que você vai receber?
+                        h1.mb-5.display-3 Liberamos 3 cursos <strong style="background: yellow;">GRATUITAMENTE</strong> para você!
             .row
                 .col-lg-4.col-md-6.mb-5(data-aos='fade-up')
                     a.card.text-center.text-decoration-none.h-100.lift(href='#!')
                         .card-body.py-5
-                            .icon-stack.icon-stack-lg.bg-green-soft.text-green.mb-4
-                                i(data-feather='music')
-                            h5 Sugestões de Músicas
-                            p.card-text.small Nossas sugestões de músicas e melodias para salmos
+                            img(src='https://minhas.musicasparamissa.com.br/cursos/liturgia-para-musicos/capa-curso-small.png', style="width: 80%;")
+                            h5(style="padding-top: 1rem;") Liturgia para Músicos
+                            p.card-text.small para você ver de uma forma mais aprofundada sobre esse assunto
                 .col-lg-4.col-md-6.mb-5(data-aos='fade-up', data-aos-delay='100')
                     a.card.text-center.text-decoration-none.h-100.lift(href='#!')
                         .card-body.py-5
-                            .icon-stack.icon-stack-lg.bg-red-soft.text-red.mb-4
-                                i(data-feather='sun')
-                            h5 Reflexões
-                            p.card-text.small Nossas reflexões sobre as leituras da missa para te ajudar a escolher as músicas
+                            img(src='https://minhas.musicasparamissa.com.br/cursos/teoria-musical/capa-curso-small.png', style="width: 80%;")
+                            h5(style="padding-top: 1rem;") Teoria Musical
+                            p.card-text.small para você aprender o que é altura dos sons, figuras rítmicas, notas musicais, etc
                 .col-lg-4.col-md-6.mb-5(data-aos='fade-up', data-aos-delay='150')
                     a.card.text-center.text-decoration-none.h-100.lift(href='#!')
                         .card-body.py-5
-                            .icon-stack.icon-stack-lg.bg-yellow-soft.text-yellow.mb-4
-                                i(data-feather='layers')
-                            h5 Conhecimento
-                            p.card-text.small Ensinamentos sobre quais músicas são apropriadas ou não para as missas
-                .col-lg-4.col-md-6.mb-5.mb-lg-0(data-aos='fade-up')
-                    a.card.text-center.text-decoration-none.h-100.lift(href='#!')
-                        .card-body.py-5
-                            .icon-stack.icon-stack-lg.bg-purple-soft.text-purple.mb-4
-                                i(data-feather='book')
-                            h5 Workshops
-                            p.card-text.small Acesso direto aos conteúdos dos nossos Workshops
-                .col-lg-4.col-md-6.mb-5.mb-md-0(data-aos='fade-up', data-aos-delay='100')
-                    a.card.text-center.text-decoration-none.h-100.lift(href='#!')
-                        .card-body.py-5
-                            .icon-stack.icon-stack-lg.bg-blue-soft.text-blue.mb-4
-                                i(data-feather='mic')
-                            h5 Avisos
-                            p.card-text.small Nossos avisos importantes em primeira mão.
-                .col-lg-4.col-md-6(data-aos='fade-up', data-aos-delay='150')
-                    a.card.text-center.text-decoration-none.h-100.lift(href='#!')
-                        .card-body.py-5
-                            .icon-stack.icon-stack-lg.bg-orange-soft.text-orange.mb-4
-                                i(data-feather='monitor')
-                            h5 Conteúdos especiais
-                            p.card-text.small Estamos sempre procurando criar novos conteúdos e aqui você terá acesso a todos eles!
+                            img(src='https://minhas.musicasparamissa.com.br/cursos/violao-iniciante/capa-curso-small.png', style="width: 80%;")
+                            h5(style="padding-top: 1rem;") Violão para iniciantes
+                            p.card-text.small para você que sempre quis aprender esse instrumento. Um curso com apostila para acompanhar o curso de forma fácil.
+                            
 
     //- * * * * * * * * * * * * * * *
-    //- * * Como funciona o canal * *
+    //- * * O que é a Plataforma  * *
     //- * * * * * * * * * * * * * * *
+
+    include mixins/header.pug
+    +header({
+        pageHeaderBg: 'bg-white',
+        pageHeaderStyle: 'page-header-light',
+        svgBorderAngled: false,
+        svgBorderRounded: false,
+        svgBorderWaves: true,
+        svgBorderFill: 'text-light',
+    })
+
+        .page-header-content
+            .container
+                .row.justify-content-center
+                    .col-xl-8.col-lg-10.text-center(data-aos='fade')
+                        h1.display-4 Mas o que é a PLATAFORMA MINHAS MÚSICAS PARA MISSA?
+                        p Uma ferramenta completa com TUDO que precisa para prestar o melhor serviço musical na missa!
+
+
+    //- * * * * * * * * * * * *
+    //- * * Device Preview  * *
+    //- * * * * * * * * * * * *
 
     include mixins/section.pug
     +section({
-        sectionBg: 'bg-white',
-        sectionPadding: 'py-10',
-        svgBorderAngled: false,
+        sectionBg: 'bg-light',
+        sectionPadding: 'pb-10 pt-1',
+        svgBorderAngled: true,
         svgBorderRounded: false,
         svgBorderWaves: false,
-        svgBorderFill: ''
+        svgBorderFill: 'text-white'
     })
 
         .container
-            .row.justify-content-center
-                .col-lg-10.mt-5
-
-                    h1.display-3 COMO FUNCIONA O CANAL MÚSICAS PARA MISSA NO TELEGRAM?
-
-                    p Nós ficamos pensando em como ficar mais próximos de você e poder te ajudar ainda mais na hora de preparar as músicas para a missa ... 
-                    p Então, tivemos a ideia de criar um canal no Telegram.
-                    p O Telegram é um pouco parecido com WhatsApp só que muito melhor na nossa opinião.
-                    p E no Telegram nós podemos te enviar áudios e mensagens direto do nosso celular para o seu.
-                    p Ele é gratuito. É só baixar e entrar no Canal do músicas para missa. Não é um grupo, não ficam rolando zilhões de mensagens ao longo do dia.
-                    p É como se fosse um canal de TV que você abre e ouve/assiste o conteúdo. 
-                    p É um lugar onde nós vamos dividir aprendizados, ideias, dicas, te ajudar a refletir sobre a liturgia e as músicas apropriadas para as missas...
-                    p Já começamos a compartilhar tudo isso lá, então se você quiser, já pode entrar no canal e acompanhar.
-
-                    .card.z-1.mb-n10
-                        .card-body.text-center.py-5
-                            h2.mb-3 Participe! É gratuito!
-                            a.btn.btn-primary.btn-lg.rounded-pill(href='https://t.me/canalmusicasparamissa') ENTRAR NO CANAL
-
-    hr
-
-    //- * * * * * * * * * * * * * *
-    //- * * Instale o Telegram! * *
-    //- * * * * * * * * * * * * * *
+            .device-laptop.text-gray-200.mt-n10(data-aos='fade-up')
+                svg.device-container(xmlns='http://www.w3.org/2000/svg', fill='currentColor', viewBox='83.911 298.53 426.962 243.838')
+                    path(d='M474.843 516.208V309.886c0-6.418-4.938-11.355-11.354-11.355H131.791c-6.417 0-11.354 4.938-11.354 11.355v206.816H83.911v13.326c4.938 7.896 31.098 12.34 40.969 12.34h345.024c10.366 0 36.526-4.936 40.969-12.34v-13.326h-36.03v-.494zM134.26 313.341h326.762v203.361H134.26V313.341z')
+                img.device-screenshot(src='assets/img/imagem-repertorio-plataforma.png')
 
     include mixins/section.pug
     +section({
         sectionBg: 'bg-white',
+        sectionPadding: 'pb-10 pt-1',
+        svgBorderAngled: false,
+        svgBorderRounded: false,
+        svgBorderWaves: true,
+        svgBorderFill: 'text-light'
+    })
+    
+        .page-header-content
+            .container
+                .row.justify-content-center
+                    .col-xl-8.col-lg-10.text-center(data-aos='fade')
+                        h1.display-4 Com a plataforma Minhas Músicas para Missa ...
+                        p(style="text-align: justify;") Você vai criar repertórios de uma maneira muito fácil e ágil e que podem facilmente ser enviados para todos do seu grupo de canto, pois assim, mesmo com a correria do dia-a-dia e as tarefas diárias que não cessam, a você e seu grupo podem por exemplo ouvir e ir aprendendo uma música nova enquanto lava a louça, ou faz qualquer outra atividade corriqueira.
+                        p(style="text-align: justify;") Veja como é fácil criar o seu repertório e usar a sua pasta de pasta de músicas.
+                .row.justify-content-center.z-1
+                    .col-lg-8(data-aos='fade-up')
+                        .card.lift.mb-n15
+                            .card-body.p-2
+                                .video.overlay.bg-img-cover.rounded(style='background-image: url("assets/img/login-plataforma.png")')
+                                    a.video-link(href='assets/video/repertorio-minhas-musicas.mp4', data-lity='')
+                                        i.fas.fa-play
+
+
+
+
+
+
+
+    include mixins/section.pug
+    +section({
+        sectionBg: 'bg-light',
         sectionPadding: 'py-10',
+        svgBorderAngled: false,
+        svgBorderRounded: false,
+        svgBorderWaves: true,
+        svgBorderFill: 'text-primary'
+    })
+
+        .container
+            .row.align-items-center.justify-content-center
+                            
+                .col-md-9.col-lg-6(data-aos='slide-right')
+                    .mb-4
+                        .content-skewed.content-skewed-right
+                            img.img-fluid.content-skewed-item.shadow-lg.rounded-lg(src='assets/img/mp3-playback-salmos.png')
+
+                .col-lg-6
+                    .mb-5
+                        h2 Mas não é só isso!
+                        p.lead
+                            | Além da área de cursos (que ficará disponível por 60 dias gratuitamente) e criação de repertórios você também terá acesso à ...
+                    .row
+                        .col-md-6.mb-4
+                            h6 Sua própria pasta de músicas
+                            p.mb-2.small Você terá a sua própria pasta virtual de músicas personalizada na núvem!
+                        .col-md-6.mb-4
+                            h6 Download de MP3 e Playback
+                            p.mb-2.small.mb-0 Você poderá baixar os MP3 de salmos e músicas de composição da nossa equipe.
+                    .row
+                        .col-md-6.mb-4
+                            h6 Tira dúvidas
+                            p.mb-2.small.mb-0 Tirar as suas dúvidas sobre música litúrgica com a gente.
+                        .col-md-6.mb-4
+                            h6 E-books e catálogo de músicas
+                            p.small.mb-0 Baixar os nossos e-books especiais sobre música e liturgia
+
+
+
+
+
+
+
+    include mixins/header.pug
+    +header({
+        pageHeaderBg: 'bg-img-repeat bg-primary',
+        pageHeaderBgImg: 'background-image: url("assets/img/pattern-shapes.png")',
+        pageHeaderStyle: 'page-header-dark',
         svgBorderAngled: false,
         svgBorderRounded: false,
         svgBorderWaves: true,
         svgBorderFill: 'text-dark'
     })
 
-        .container
-            .row.align-items-center
-                .col-lg-6
-                    h4 Se você não tem o telegram instalado
-                    p.lead.mb-5.mb-lg-0 você precisa baixar o Telegram no celular. Basta acessar um desses links, dependendo do modelo do seu aparelho:
-                .col-lg-6.text-lg-right
-                    a.mr-3(href='https://apps.apple.com/br/app/telegram-messenger/id686449807' target="blank")
-                        img(src='assets/img/app-store-badge.svg', style="height: 3rem;")
-                    a(href='https://play.google.com/store/apps/details?id=org.telegram.messenger' target="blank")
-                        img(src='assets/img/google-play-badge.svg', style="height: 3rem;")
+        .page-header-content(id="signup-form")
+            .container
+                .row.align-items-center
+                    .col-lg-6
+                        h1.page-header-title Garanta a sua vaga agora mesmo!
+                        p.page-header-text Liberamos os cursos da plataforma GRATUITAMENTA por 60 dias para você estudar durante esta quarentena. Esta é a forma que encontramos de colaborar ainda mais com você.
+                        p.page-header-text Se você quiser adquirir acesso PRÊMIUM à todas as funcionalidade da plataforma, você verá mais detalhes após fazer o seu login.
+                    .col-lg-6
+                        .card.rounded-lg.text-dark
+                            .card-header.py-4
+                                | Cadastre-se GRATUITAMENTE para ter acesso aos cursos!
+                            .card-body
+                                form(method="POST" action="https://g1k8r5gt46.execute-api.us-east-1.amazonaws.com/prod/users/free")
+                                    .form-group
+                                        label.small.text-gray-600(for='leadCapName') Nome Completo
+                                        input#leadCapName.form-control.rounded-pill(type='text' name='name' required)
+                                    .form-group
+                                        label.small.text-gray-600(for='leadCapEmail') E-mail
+                                        input#leadCapEmail.form-control.rounded-pill(type='email' name='email' required)
+                                    .form-row
+                                        .form-group.col-md-6
+                                            label.small.text-gray-600(for='leadCapPassword') Senha
+                                            input#leadCapPassword.form-control.rounded-pill(type='password' name='password' required)
+                                        .form-group.col-md-6
+                                            label.small.text-gray-600(for='leadCapConfirmPassword') Confirmação da Senha
+                                            input#leadCapConfirmPassword.form-control.rounded-pill(type='password' required)
+                                    .form-group
+                                        input(type="hidden" id="g-recaptcha-response" name="g-recaptcha-response")
+                                        input(type="hidden" name="action" value="validate_captcha")
+                                    button.btn.btn-primary.btn-marketing.btn-block.rounded-pill.mt-4(type='submit') Solicitar Cadastro
+
+
+
 
 block footer
 
@@ -170,6 +275,7 @@ block footer
     })
 
 append scripts
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.0/lity.min.js')
     script(src='https://unpkg.com/aos@next/dist/aos.js')
     script.
         AOS.init({
@@ -177,3 +283,25 @@ append scripts
             duration: 600,
             once: true
         });
+    script(src="https://www.google.com/recaptcha/api.js?render=6LemqOUUAAAAADhIyNdk8F0iLFY9Jb-ykx7J5n2c")
+    script.
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LemqOUUAAAAADhIyNdk8F0iLFY9Jb-ykx7J5n2c', {action: 'validate_captcha'}).then(function(token) {
+                console.log('token - ', token);
+                //- document.getElementById('g-recaptcha-response').value = token;
+            });
+        });
+
+        var password = document.getElementById("leadCapPassword");
+        var confirm_password = document.getElementById("leadCapConfirmPassword");
+
+        function validatePassword(){
+            if(password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("As senhas não são iguais");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
