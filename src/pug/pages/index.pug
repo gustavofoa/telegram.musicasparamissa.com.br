@@ -82,7 +82,7 @@ block content
             .row.justify-content-center
                 .col-lg-9
                     .text-center
-                        h1.mb-5.display-3 Liberamos 3 cursos <strong style="background: yellow;">GRATUITAMENTE</strong> para você!
+                        h1.display-3 Liberamos 3 cursos <strong style="background: yellow; word-break: break-word;">GRATUITAMENTE</strong> para você!
             .row
                 .col-lg-4.col-md-6.mb-5(data-aos='fade-up')
                     a.card.text-center.text-decoration-none.h-100.lift(href='#!')
@@ -162,7 +162,7 @@ block content
                     .col-xl-8.col-lg-10.text-center(data-aos='fade')
                         h1.display-4 Com a plataforma Minhas Músicas para Missa ...
                         p(style="text-align: justify;") Você vai criar repertórios de uma maneira muito fácil e ágil e que podem facilmente ser enviados para todos do seu grupo de canto, pois assim, mesmo com a correria do dia-a-dia e as tarefas diárias que não cessam, a você e seu grupo podem por exemplo ouvir e ir aprendendo uma música nova enquanto lava a louça, ou faz qualquer outra atividade corriqueira.
-                        p(style="text-align: justify;") Veja como é fácil criar o seu repertório e usar a sua pasta de pasta de músicas.
+                        p(style="text-align: justify;") Veja como é fácil criar o seu repertório e usar a sua pasta de músicas.
                 .row.justify-content-center.z-1
                     .col-lg-8(data-aos='fade-up')
                         .card.lift.mb-n15
@@ -239,7 +239,7 @@ block content
                         h1.page-header-title Garanta a sua vaga agora mesmo!
                         p.page-header-text Liberamos os cursos da plataforma GRATUITAMENTA por 60 dias para você estudar durante esta quarentena. Esta é a forma que encontramos de colaborar ainda mais com você.
                         p.page-header-text Se você quiser adquirir acesso PRÊMIUM à todas as funcionalidade da plataforma, você verá mais detalhes após fazer o seu login.
-                    .col-lg-6
+                    .col-lg-6(data-aos='slide-left')
                         .card.rounded-lg.text-dark
                             .card-header.py-4
                                 | Cadastre-se GRATUITAMENTE para ter acesso aos cursos!
@@ -287,8 +287,8 @@ append scripts
     script.
         grecaptcha.ready(function() {
             grecaptcha.execute('6LemqOUUAAAAADhIyNdk8F0iLFY9Jb-ykx7J5n2c', {action: 'validate_captcha'}).then(function(token) {
-                console.log('token - ', token);
-                //- document.getElementById('g-recaptcha-response').value = token;
+                var recaptchaResponse = document.getElementById('g-recaptcha-response');
+                recaptchaResponse.value = token;
             });
         });
 
