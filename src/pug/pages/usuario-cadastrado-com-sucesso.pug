@@ -1,0 +1,60 @@
+extends ../layouts/default.pug
+
+block config
+
+    - var pageTitle = 'Plataforma Minhas Músicas para Missa'
+
+append css
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.0/lity.min.css')
+    link(rel='stylesheet', href='https://unpkg.com/aos@next/dist/aos.css')
+
+    style.
+        #layoutDefault {
+            background: #1f2d41 !important;
+        }
+
+block content
+
+    //- * * * * * * * * * *
+    //- * * Page Header * *
+    //- * * * * * * * * * *
+
+    include mixins/header.pug
+    +header({
+        pageHeaderBg: 'bg-gradient-primary-to-secondary',
+        pageHeaderStyle: 'page-header-dark',
+        svgBorderAngled: false,
+        svgBorderRounded: false,
+        svgBorderWaves: true,
+        svgBorderFill: 'text-dark'
+    })
+
+        .page-header-content.mb-n5
+            .container
+                .row.justify-content-center
+                    .col-xl-8.col-lg-10.text-center(data-aos='fade')
+                        h1.page-header-title Que bom ter você conosco!
+                        p.page-header-text.mb-5 Sua conta GRATUITA foi criada na plataforma Minhas Músicas para Missa. Você pode fazer login clicando no botão abaixo
+                        .row-lg.text-center(data-aos='fade-up', data-aos-delay='500')
+                            a.btn.btn-white.btn-xl.text-primary.rounded-pill(href='https://minhas.musicasparamissa.com.br/') FAZER LOGIN NA PLATAFORMA
+                        
+                
+
+
+block footer
+
+    include mixins/footer.pug
+    +footer({
+        footerBg: 'bg-dark',
+        footerStyle: 'footer-dark'
+    })
+
+append scripts
+    script(src='https://unpkg.com/aos@next/dist/aos.js')
+    script.
+        AOS.init({
+            disable: 'mobile',
+            duration: 600,
+            once: true
+        });
+    
