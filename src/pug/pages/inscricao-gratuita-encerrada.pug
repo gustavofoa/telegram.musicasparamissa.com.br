@@ -1,0 +1,60 @@
+extends ../layouts/default.pug
+
+block config
+
+    - var pageTitle = 'Plataforma Minhas Músicas para Missa'
+
+append css
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.0/lity.min.css')
+    link(rel='stylesheet', href='https://unpkg.com/aos@next/dist/aos.css')
+
+block content
+
+    //- * * * * * * * * * *
+    //- * * Page Header * *
+    //- * * * * * * * * * *
+
+    include mixins/header.pug
+    +header({
+        pageHeaderBg: 'bg-gradient-primary-to-secondary',
+        pageHeaderStyle: 'page-header-dark',
+        svgBorderAngled: false,
+        svgBorderRounded: false,
+        svgBorderWaves: true,
+        svgBorderFill: 'text-dark'
+    })
+
+        .page-header-content.mb-n5
+            .container
+                .row.justify-content-center.align-items-center
+                    .col-lg-6(data-aos='fade-right')
+                        h1.page-header-title Inscrições encerradas!
+                        p.page-header-text.mb-5 As inscrições para a plataforma <strong>Minhas Músicas para Missa</strong> foram encerradas.
+                        p.page-header-text.mb-5 Estamos preparando mais novidades para as próximas semanas. Fique atento para não perder novas oportunidades.
+                    .col-lg-6.z-1(data-aos='fade-left')
+                        .device-wrapper.mx-auto.mb-n15
+                            .device(data-device='iPhoneX', data-orientation='portrait', data-color='black')
+                                .screen
+                                    img(src='assets/img/inscricoes-gratuitas-minhas-mpm.png').img-fluid.z-1
+                    
+                    
+
+
+
+block footer
+
+    include mixins/footer.pug
+    +footer({
+        footerBg: 'bg-dark',
+        footerStyle: 'footer-dark'
+    })
+
+append scripts
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.0/lity.min.js')
+    script(src='https://unpkg.com/aos@next/dist/aos.js')
+    script.
+        AOS.init({
+            disable: 'mobile',
+            duration: 600,
+            once: true
+        });
